@@ -190,7 +190,7 @@ export default function viteBundleObfuscator(config?: Partial<Config>): PluginOp
   };
 
   const generateBundleHandler: Rollup.Plugin['generateBundle'] = async (_, bundle) => {
-    if (!finalConfig.enable || !bundle || _isLibMode || !_isNuxtProject || _isSsrBuild) return;
+    if (!finalConfig.enable || !bundle || _isLibMode || _isSsrBuild) return;
     await obfuscateAllChunks(bundle);
   };
 
